@@ -3,13 +3,13 @@ import { dimensions } from './console';
 const controlCharacter = '\x1b';
 export enum Color {
 	Black = 0,
-	Red = 31,
+	Red = 41,
 	Green = 32,
 }
 
 export function format(message: string) {
 	return {
-		color: (color: Color) => format(colorize(color, message)),
+		color: (color: Color) => colorize(color, message),
 		underscore: () => {},
 		center: () => console.log(dimensions),
 	};
