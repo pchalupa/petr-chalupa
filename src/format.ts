@@ -1,5 +1,3 @@
-import { dimensions } from './console';
-
 const controlCharacter = '\x1b';
 export enum Color {
 	Black = 0,
@@ -7,16 +5,12 @@ export enum Color {
 	Green = 32,
 }
 
-export function format(message: string) {
-	return {
-		color: (color: Color) => colorize(color, message),
-		underscore: () => {},
-		center: () => console.log(dimensions),
-	};
+export function format(message: string, style: { color: Color }) {
+	const result: string[] = [];
+	return result.concat(make(style.color)).concat(message).concat(`${controlCharacter}[0m`).join('');
+	return `${result.join()}${message}${controlCharacter}[0m`;
 }
 
-function colorize(color: Color, message: string) {
-	return controlCharacter + '[' + color + 'm' + message + controlCharacter + '[' + Color.Black + 'm';
+export function make(code: number) {
+	return `\x1b[${code}m`;
 }
-
-function font() {}
