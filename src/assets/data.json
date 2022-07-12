@@ -1,6 +1,8 @@
 {
 	"firstName": "Petr",
 	"lastName": "Chalupa",
+	"company": "@24i",
+	"role": "Frontend Engineer",
 	"social": {
 		"linkedIn": "https://www.linkedin.com/in/petr-chalupa/",
 		"twitter": "",

@@ -1,16 +1,23 @@
 #! /usr/bin/env node
 
-import { Color, format } from './format';
-import { clear, dimensions, print } from './console';
-import data from './data.json';
+import data from './assets/data.json';
+import { block } from './components/block';
+import { blankLine } from './components/blankLine';
+import { header } from './components/header';
+import { render } from './render';
+import { title } from './components/title';
+import { subtitle } from './components/subtitle';
+import { footer } from './components/footer';
 
-clear();
-// print(format('1.0').color(Color.Red) + format(' '.repeat(dimensions.width - 3)).color(Color.Red));
-print(`test ${format('fooo', { color: Color.Red })}`);
-print(`${data.firstName} ${data.lastName}`);
-// print(format(' '.repeat(dimensions.width)).color(Color.Red));
-// print(format(`                                      `).color(Color.Red));
-// print(format(`  GitHub ${data.social.github}  `).color(Color.Red));
-// print(format(`                                      `).color(Color.Red));
+const screen = [
+	header({ version: '1.0' }),
+	blankLine(),
+	title(`Hello, I am ${data.firstName} ${data.lastName}`),
+	subtitle(`${data.role} at ${data.company}`),
+	blankLine(),
+	block(`GitHub ${data.social.github}`),
+	blankLine(),
+	footer(),
+];
 
-// new Text('fooo').color('red').background('blue').underscore()
+render(screen);
