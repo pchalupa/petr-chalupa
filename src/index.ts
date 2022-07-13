@@ -17,7 +17,7 @@ const frame = [
 	title({ message: `Hello, I am ${format(`${data.firstName} ${data.lastName}`, [Color.Magenta])}` }),
 	format(`${data.role} at ${data.company}`, [Font.Dim, Color.White]),
 	blankLine(),
-	title({ message: 'Skils:', color: Color.Green }),
+	title({ message: 'Skills:', color: Color.Green }),
 	list({ items: data.skills }),
 	blankLine(),
 	block({ message: `GitHub: ${data.links.github}` }),
