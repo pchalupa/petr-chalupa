@@ -12,7 +12,7 @@ import { format } from './format';
 import { title } from './components/title';
 
 const frame = [
-	header({ version: 'petr-chalupa@1.0.0' }),
+	header({ version: 'petr-chalupa@1.0.2' }),
 	blankLine(),
 	title({ message: `Hello, I am ${format(`${data.firstName} ${data.lastName}`, [Color.Magenta])}` }),
 	format(`${data.role} at ${data.company}`, [Font.Dim, Color.White]),
