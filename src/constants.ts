@@ -1,11 +1,12 @@
 export enum Format {
 	Reset = 0,
+	Hidden = 8,
+}
+
+export enum Font {
 	Bright = 1,
 	Dim = 2,
 	Underscore = 4,
-	Blink = 5,
-	Reverse = 7,
-	Hidden = 8,
 }
 
 export enum Color {

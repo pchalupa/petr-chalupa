@@ -3,9 +3,9 @@
 	"lastName": "Chalupa",
 	"company": "@24i",
 	"role": "Frontend Engineer",
-	"social": {
+	"skills": ["TypeScript", "React", "React Native", "CI/CD"],
+	"links": {
 		"linkedIn": "https://www.linkedin.com/in/petr-chalupa/",
-		"twitter": "",
 		"github": "https://github.com/pchalupa"
 	}
 }

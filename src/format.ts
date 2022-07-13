@@ -1,14 +1,19 @@
-import { type Color, type BackgroundColor, Format } from './constants';
+import { Format, Font, Color, BackgroundColor } from './constants';
 
-export function format(message: string, style: { color?: Color; backgroundColor?: BackgroundColor; format?: Format }) {
+export type StyleCode = Format | Font | Color | BackgroundColor;
+
+export function format(message: string, style: StyleCode[]) {
 	const result: string[] = [];
-	const modificators = make(Object.values(style) as unknown as number);
+	const modificators = getEscapeSequence(style);
 
-	return result.concat(modificators).concat(message).concat(make(Format.Reset)).join('');
+	return result
+		.concat(modificators)
+		.concat(message.replace(getEscapeSequence([Format.Reset]), modificators))
+		.concat(getEscapeSequence([Format.Reset]))
+		.join('');
 }
 
-function make(code: number): string;
-function make(codes: number[] | number) {
+function getEscapeSequence(codes: StyleCode[]) {
 	const modificatorCode = Array.isArray(codes) ? codes.join(';') : codes;
 
 	return `\x1b[${modificatorCode}m`;

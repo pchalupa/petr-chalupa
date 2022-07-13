@@ -5,19 +5,28 @@ import { block } from './components/block';
 import { blankLine } from './components/blankLine';
 import { header } from './components/header';
 import { render } from './render';
-import { title } from './components/title';
-import { subtitle } from './components/subtitle';
 import { footer } from './components/footer';
+import { BackgroundColor, Color, Font } from './constants';
+import { list } from './components/list';
+import { format } from './format';
+import { title } from './components/title';
 
-const screen = [
-	header({ version: '1.0' }),
+const frame = [
+	header({ version: 'petr-chalupa@1.0.0' }),
 	blankLine(),
-	title(`Hello, I am ${data.firstName} ${data.lastName}`),
-	subtitle(`${data.role} at ${data.company}`),
+	title({ message: `Hello, I am ${format(`${data.firstName} ${data.lastName}`, [Color.Magenta])}` }),
+	format(`${data.role} at ${data.company}`, [Font.Dim, Color.White]),
 	blankLine(),
-	block(`GitHub ${data.social.github}`),
+	title({ message: 'Skils:', color: Color.Green }),
+	list({ items: data.skills }),
+	blankLine(),
+	block({ message: `GitHub: ${data.links.github}` }),
+	block({
+		message: `LinkedIn: ${data.links.linkedIn}`,
+		backgroundColor: BackgroundColor.Blue,
+	}),
 	blankLine(),
 	footer(),
 ];
 
-render(screen);
+render(frame);

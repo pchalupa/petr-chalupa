@@ -1,6 +1,6 @@
-import { Format } from '../constants';
+import { Color, Font } from '../constants';
 import { format } from '../format';
 
-export function title(message: string) {
-	return format(message, { format: Format.Bright });
+export function title({ message, color = Color.Cyan }: { message: string; color?: Color }) {
+	return format(message, [Font.Bright, color]);
 }
