@@ -10,10 +10,9 @@ import { BackgroundColor, Color, Font } from './constants';
 import { list } from './components/list';
 import { format } from './format';
 import { title } from './components/title';
-import { version } from '../package.json';
 
 const frame = [
-	header({ version: `petr-chalupa@${version}` }),
+	header({ version: 'petr-chalupa@1' }),
 	blankLine(),
 	title({ message: `Hello, I am ${format(`${data.firstName} ${data.lastName}`, [Color.Magenta])}` }),
 	format(`${data.role} at ${data.company}`, [Font.Dim, Color.White]),
