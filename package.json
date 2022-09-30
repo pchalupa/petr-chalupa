@@ -11,14 +11,15 @@
 	],
 	"scripts": {
 		"build": "tsc",
-		"build:watch": "tsc --watch"
+		"build:watch": "tsc --watch",
+		"release": "npm run build & auto shipit"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/pchalupa/petr-chalupa.git"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "pchalupa <chalupa.petr93@gmail.com>",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/pchalupa/petr-chalupa/issues"
@@ -26,6 +27,14 @@
 	"homepage": "https://github.com/pchalupa/petr-chalupa#readme",
 	"devDependencies": {
 		"@types/node": "^18.7.23",
+		"auto": "^10.37.6",
 		"typescript": "^4.8.4"
+	},
+	"auto": {
+		"plugins": [
+			"npm",
+			"conventional-commits",
+			"released"
+		]
 	}
 }
