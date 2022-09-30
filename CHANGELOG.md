@@ -1,3 +1,15 @@
+# 1.0.7 (Fri Sep 30 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix: import ([@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 1
+
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.0.6 (Fri Sep 30 2022)
 
 #### ⚠️ Pushed to `main`
