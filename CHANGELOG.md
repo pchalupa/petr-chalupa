@@ -1,3 +1,16 @@
+# 1.0.6 (Fri Sep 30 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:pchalupa/petr-chalupa ([@pchalupa](https://github.com/pchalupa))
+- chore: fix target ([@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 1
+
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.0.3 (Fri Sep 30 2022)
 
 #### 🐛 Bug Fix
