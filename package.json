@@ -12,7 +12,7 @@
 	"scripts": {
 		"build": "tsc",
 		"build:watch": "tsc --watch",
-		"release": "npm run build & auto shipit"
+		"release": "auto shipit"
 	},
 	"repository": {
 		"type": "git",
