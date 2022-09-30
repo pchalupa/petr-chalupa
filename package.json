@@ -10,9 +10,8 @@
 		"dist"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc",
-		"build:watch": "tsc"
+		"build:watch": "tsc --watch"
 	},
 	"repository": {
 		"type": "git",
@@ -26,8 +25,7 @@
 	},
 	"homepage": "https://github.com/pchalupa/petr-chalupa#readme",
 	"devDependencies": {
-		"@types/node": "^18.0.3",
-		"typescript": "^4.7.4"
-	},
-	"dependencies": {}
+		"@types/node": "^18.7.23",
+		"typescript": "^4.8.4"
+	}
 }
