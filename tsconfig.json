@@ -8,8 +8,6 @@
 		"outDir": "./dist",
 		"removeComments": true,
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"skipLibCheck": false
+		"strict": true
 	}
 }
