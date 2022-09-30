@@ -1,0 +1,29 @@
+on: [push]
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        environment: NPM
+        if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+        environment:
+            name: npm
+            url: https://www.npmjs.com/package/@torolocos/eslint-config
+        steps:
+            - uses: actions/checkout@v3
+            - run: git fetch --unshallow --tags
+            - uses: actions/setup-node@v3
+              with:
+                  cache: 'npm'
+                  node-version: 16
+            - id: npm-cache-dir
+              run: echo "::set-output name=dir::$(npm config get cache)"
+            - uses: actions/cache@v3
+              with:
+                path: ${{ steps.npm-cache-dir.outputs.dir }}
+                key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
+                ${{ runner.os }}-node-
+            - name: Create Release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: npm run release
