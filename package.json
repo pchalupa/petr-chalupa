@@ -12,7 +12,7 @@
 	"scripts": {
 		"build": "tsc",
 		"build:watch": "tsc --watch",
-		"release": "auto shipit"
+		"release": "auto shipit --no-version-prefix"
 	},
 	"repository": {
 		"type": "git",
@@ -34,8 +34,12 @@
 	"auto": {
 		"plugins": [
 			"npm",
-			"conventional-commits",
-			"released"
+			[
+				"conventional-commits",
+				{
+					"preset": "conventionalcommits"
+				}
+			]
 		]
 	}
 }
