@@ -1,9 +1,9 @@
 {
 	"firstName": "Petr",
 	"lastName": "Chalupa",
-	"company": "@STRV",
+	"company": "STRV",
 	"role": "Frontend Engineer",
-	"skills": ["TypeScript", "React", "React Native", "CI/CD"],
+	"skills": ["TypeScript", "React", "React Native"],
 	"links": {
 		"linkedIn": "https://www.linkedin.com/in/petr-chalupa/",
 		"github": "https://github.com/pchalupa"
