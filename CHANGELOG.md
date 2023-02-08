@@ -1,3 +1,15 @@
+# 1.0.8 (Wed Feb 08 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: add gitignore ([@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 1
+
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.0.7 (Fri Sep 30 2022)
 
 #### ⚠️ Pushed to `main`
